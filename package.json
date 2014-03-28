@@ -1,0 +1,22 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.4.0",
+    "ejs": "*",
+    "firebase": "*",
+    "marked": "~0.3.2",
+    "underscore": "*",
+    "cors": "*",
+    "forever": "*",
+    "moment": "*",
+    "markdown-pdf": "*",
+    "request": "~2.34.0",
+    "colors": "~0.6.2",
+    "markdown-word": "git://github.com/Trimeego/markdown-word.git"
+  }
+}
