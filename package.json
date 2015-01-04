@@ -14,7 +14,7 @@
     "cors": "*",
     "forever": "*",
     "moment": "*",
-    "markdown-pdf": "*",
+    "markdown-pdf": "alanshaw/markdown-pdf",
     "request": "~2.34.0",
     "colors": "~0.6.2",
     "markdown-word": "git://github.com/Trimeego/markdown-word.git"

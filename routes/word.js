@@ -9,7 +9,7 @@ var
 
 var jsonToMarkdown = function(json, cb){
 	console.log("\tTemplating")
-	cb(template({model : json}))
+	return cb(template({model : json}))
 }
 
 var word = function(req, res, firebase){

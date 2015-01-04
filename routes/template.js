@@ -1,5 +1,5 @@
 var
-	_			= require('underscore'),
+	_		= require('underscore'),
 	moment 	= require('moment')
 
 	;
@@ -150,7 +150,7 @@ var template = [
 	"<%= model.technology.value %>",
 	"##Managment structure",
 	"<%= model.managmentstructure.value %>",
-	"<% } %>",
+	"<% } %>"
 
 ].join('\n\n');
 

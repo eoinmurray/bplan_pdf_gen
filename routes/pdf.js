@@ -1,5 +1,5 @@
 var
-	markdownpdf = require('markdown-pdf'),
+	markdownpdf = require("markdown-pdf"),
 	template 	= require('./template'),
 	sanitize 	= require('./sanitize'),
 	path 		= require('path')
@@ -23,18 +23,18 @@ var pdf = function(req, res, firebase){
 			var file = path.resolve(__dirname+ '/../tmp/pdf_' + req.body.id + '.pdf');
 			console.log("\tConverting to Pdf".blue)
 
+			console.log("\t" + file)
+
 			markdownpdf({
-				cssPath : __dirname + '/pdf.css',
-				paperFormat : "A4",
-				paperBorder : "2in",
-			}).from.string(md).to(file, function () {
+			    cssPath : __dirname + '/pdf.css',
+			    paperFormat : "A4",
+			    paperBorder : "2in",
+			})
+			.from.string(md).to(file, function () {
   				console.log("\tCreated: ".green, file)
   				res.send({success : true})
 			})
-
 		})
-
-
 	})
 }
 
