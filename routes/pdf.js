@@ -2,7 +2,7 @@ var
 	markdownpdf = require('markdown-pdf'),
 	template 	= require('./template'),
 	sanitize 	= require('./sanitize'),
-	path 			= require('path')
+	path 		= require('path')
 	;
 
 var jsonToMarkdown = function(json, cb){

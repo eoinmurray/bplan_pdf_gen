@@ -1,13 +1,14 @@
 var
-	_ 					= require('underscore'),
+	_ 				= require('underscore'),
 	template 		= require('./template'),
-	sanitize 	= require('./sanitize'),
+	sanitize 	    = require('./sanitize'),
   	markdownword 	= require("markdown-word"),
-	path 				= require('path')
+	path 			= require('path')
 	fs 				= require('fs')
 	;
 
 var jsonToMarkdown = function(json, cb){
+	console.log("\tTemplating")
 	cb(template({model : json}))
 }
 
@@ -17,9 +18,9 @@ var word = function(req, res, firebase){
 		console.log("\tFetched from Firebase.")
 
 		var val = sanitize(snapshot.val())
-
-
+		console.log("\tSanitized")
 		jsonToMarkdown(val, function(md){
+			console.log('\tRecieved markdown convert')
 			if(!md) res.send({success : false, error : 'Invalid characters.'})
 			console.log("\tConverted to markdown")
 

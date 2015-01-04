@@ -1,13 +1,13 @@
 var
 	express 		= require('express');
 	http 			= require('http'),
-	fs 			= require('fs'),
+	fs 			    = require('fs'),
 	_ 				= require('underscore'),
 	cors 			= require('cors'),
-	colors 		= require('colors'),
+	colors 		    = require('colors'),
 	pdf 			= require('./routes/pdf'),
 	word 			= require('./routes/word')
-	download 	= require('./routes/download')
+	download 	    = require('./routes/download')
 	;
 
 var app = express();
@@ -23,12 +23,11 @@ if ('development' == app.get('env')) app.use(express.errorHandler());
 
 var Firebase = require('firebase');
 var firebase = new Firebase('https://sbc.firebaseio.com/');
-
 firebase.auth('BSfylnGp0fa2EDFrVFe0xYInZg6ebowMsSn7Pz04', function(error){
 	if(error)
-		console.log("Firebase error".blue, error);
+		return console.log("Firebase error".blue, error);
 	else
-		console.log("Firebase authorised".green);
+		return console.log("Firebase authorised".green);
 })
 
 
