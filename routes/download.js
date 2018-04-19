@@ -7,7 +7,7 @@ var
 var download = function(req, res, ext){
 	var name = (ext === 'pdf') ? 'pdf' : 'word'
 
-	var file = path.resolve(__dirname+ '/../tmp/' + name + '_' + req.params.id + '.' + ext);
+	var file = path.resolve('/tmp/' + name + '_' + req.params.id + '.' + ext);
 	console.log("Downloading file:".green, file)
 	res.download(file)
 
