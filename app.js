@@ -22,14 +22,11 @@ app.use(app.router);
 if ('development' == app.get('env')) app.use(express.errorHandler());
 
 var Firebase = require('firebase');
-var firebase = new Firebase('https://sbc.firebaseio.com/');
-firebase.auth('BSfylnGp0fa2EDFrVFe0xYInZg6ebowMsSn7Pz04', function(error){
-	if(error)
-		return console.log("Firebase error".blue, error);
-	else
-		return console.log("Firebase authorised".green);
+var firebase = Firebase.initializeApp({
+	apiKey: 'BSfylnGp0fa2EDFrVFe0xYInZg6ebowMsSn7Pz04',
+	authDomain: 'https://sbc.firebaseio.com/',
+	databaseURL: 'https://sbc.firebaseio.com/',
 })
-
 
 //Routes
 app.get('/', function(req, res){

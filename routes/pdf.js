@@ -11,7 +11,7 @@ var jsonToMarkdown = function(json, cb){
 
 var pdf = function(req, res, firebase){
 	console.log("PDF Convert request:".blue, req.body.id)
-	firebase.child(req.body.id).on('value', function(snapshot){
+	firebase.database().ref(req.body.id).on('value', function(snapshot){
 		console.log("\tFetched from Firebase.")
 
 		var val = sanitize(snapshot.val())
@@ -20,7 +20,7 @@ var pdf = function(req, res, firebase){
 			if(!md) res.send({success : false, error : 'Invalid characters.'})
 			console.log("\tConverted to markdown")
 
-			var file = path.resolve(__dirname+ '/../tmp/pdf_' + req.body.id + '.pdf');
+			var file = path.resolve('/tmp/pdf_' + req.body.id + '.pdf');
 			console.log("\tConverting to Pdf".blue)
 
 			console.log("\t" + file)
